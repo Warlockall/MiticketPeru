@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('Nacionalidad', models.CharField(max_length=20)),
                 ('FechaNac', models.DateField()),
                 ('Telefono', models.CharField(max_length=15, null=True, blank=True)),
-                ('DocScaneado', models.ImageField(upload_to=b'Media')),
+                ('DocScaneado', models.ImageField(null=True, upload_to=b'Media', blank=True)),
                 ('Observacion', models.TextField(null=True, blank=True)),
             ],
         ),
@@ -53,6 +53,7 @@ class Migration(migrations.Migration):
                 ('Email', models.EmailField(max_length=254, null=True, blank=True)),
                 ('FechaReserva', models.DateField(auto_now_add=True)),
                 ('IdCliente', models.ManyToManyField(to='tickets.Cliente')),
+                ('IdPaquete', models.ForeignKey(to='tickets.Paquete')),
             ],
         ),
         migrations.CreateModel(

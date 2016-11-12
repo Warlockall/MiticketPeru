@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>{% block title %}{% endblock title %}</title>
+    {% block css %}{% endblock css %}
+    {% block metadescripcion %}{% endblock metadescripcion %}
+    {% block metakeywords %}{% endblock metakeywords %}
 </head>
 <body>
-	
+	{% block content %}{% endblock content %}
 </body>
 </html>

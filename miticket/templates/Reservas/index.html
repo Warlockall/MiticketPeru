@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+<!-- EL titulo de la pagina -->
+{% block title %} Mi Ticket Peru {% endblock title %}
+<!-- metadescripcion de la pagina -->
+{% block metadescripcion %} <meta name="description" content=""> {% endblock metadescripcion %}
+<!-- keywords de la pagina -->
+{% block metakeywords %} <meta name="keywords" content=""> {% endblock metakeywords %}
+
+
+<!-- Inicio contenido de la pagina -->
+{% block content %}
+	{% include "include/header.html" %}
+
+	<ul>
+	{% for o in clientes %}
+		<li> {{ o }} </li>
+	{% empty %}
+   		<li> No hay clientes </li>
+	{% endfor %}
+	</ul>
+
+	{% include "include/footer.html" %}
+{% endblock content %}
+<!-- Fin contenido de la pagina -->
+
